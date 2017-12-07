@@ -1,21 +1,12 @@
-﻿/*
-* ----------------------------------------------------------------             
-Copyright (C#) 2015 北京圣邦天麒科技有限公司 版权所有      
-文件名： LogManage
-文件功能描述： 日志管理区域
-创建标识： 
-修改标识： 
-修改描述：     
-* ----------------------------------------------------------------
-*/
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+[assembly: log4net.Config.XmlConfigurator(Watch = true)]
 namespace DoorControlWeb.Common
 {
-    [assembly: log4net.Config.XmlConfigurator(Watch = true)]
+    
     public static class LogManage
     {
         #region 输出日志到Log4Net

@@ -1,5 +1,0 @@
-H:\北京物资学院\北京物资学研\DoorControlWeb20161130各副本\DoorControlWeb20161130 - 修改v1\DoorControlWeb\bin\DoorControlWeb.dll.config
-H:\北京物资学院\北京物资学研\DoorControlWeb20161130各副本\DoorControlWeb20161130 - 修改v1\DoorControlWeb\bin\DoorControlWeb.dll
-H:\北京物资学院\北京物资学研\DoorControlWeb20161130各副本\DoorControlWeb20161130 - 修改v1\DoorControlWeb\bin\DoorControlWeb.pdb
-H:\北京物资学院\北京物资学研\DoorControlWeb20161130各副本\DoorControlWeb20161130 - 修改v1\DoorControlWeb\obj\Release\DoorControlWeb.dll
-H:\北京物资学院\北京物资学研\DoorControlWeb20161130各副本\DoorControlWeb20161130 - 修改v1\DoorControlWeb\obj\Release\DoorControlWeb.pdb

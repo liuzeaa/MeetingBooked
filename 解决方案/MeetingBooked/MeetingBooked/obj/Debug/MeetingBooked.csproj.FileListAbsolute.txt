@@ -1,6 +1,0 @@
-F:\workplace\门禁预约系统\解决方案\MeetingBooked\MeetingBooked\bin\MeetingBooked.dll.config
-F:\workplace\门禁预约系统\解决方案\MeetingBooked\MeetingBooked\bin\MeetingBooked.dll
-F:\workplace\门禁预约系统\解决方案\MeetingBooked\MeetingBooked\bin\MeetingBooked.pdb
-F:\workplace\门禁预约系统\解决方案\MeetingBooked\MeetingBooked\obj\Debug\MeetingBooked.csprojResolveAssemblyReference.cache
-F:\workplace\门禁预约系统\解决方案\MeetingBooked\MeetingBooked\obj\Debug\MeetingBooked.dll
-F:\workplace\门禁预约系统\解决方案\MeetingBooked\MeetingBooked\obj\Debug\MeetingBooked.pdb

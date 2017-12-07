@@ -1,1 +1,0 @@
-﻿<%@ WebService Language="C#" CodeBehind="DoorControl.asmx.cs" Class="DoorControlWeb.DoorControl" %>
