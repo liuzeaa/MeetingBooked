@@ -265,7 +265,4 @@ bin-release/
 # information for Eclipse / Flash Builder.
 
 # Bower vendor packages
-src/ChineseStar.CourseSchedule.Web/Assets/Vendor
 
-/src/ChineseStar.CourseSchedule.Web/Assets/Vendor
-src/ChineseStar.CourseSchedule.Web/Web.config
