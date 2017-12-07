@@ -1,0 +1,112 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+
+<#@ assembly name="System.Data" #>
+<#@ assembly name="System.xml" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Data.SqlClient" #>
+<#@ import namespace="System.Configuration" #>
+<#	// 生成配置
+	// 是否生成所有表
+	bool builderAll = true;
+	// 是否使用表名配置
+	bool useTableNamesDictionary = false;
+#>
+<#	// 连接字符串,表结构查询语句
+	string musicStoreConnectionString =@"Data Source=.;Initial Catalog=TLC;User ID=sa;password=sa@2016";    
+	                                                 
+
+#>
+<#	// 设置要生成的当前数据库中所有的表名	
+	Dictionary<string,string> tableNames=new Dictionary<string,string>();
+
+	
+#>
+<#	// 获取当前数据库中所有的表名	
+	if (builderAll == true )
+	{  		
+		using (SqlConnection sqlConnection = new SqlConnection(musicStoreConnectionString))
+		{
+			// 获取所有用户表的查询语句
+			string getAllTableNameSql = "SELECT name FROM sysobjects where xtype='U'";
+			SqlCommand sqlCommand = new SqlCommand(getAllTableNameSql, sqlConnection);
+			sqlConnection.Open();
+			SqlDataReader reader = sqlCommand.ExecuteReader();
+
+			while (reader.Read())
+			{
+				string theTableName =(reader["name"] as string);
+				if(useTableNamesDictionary == true)
+				{
+					if(tableNames.ContainsKey(theTableName)){
+						continue;
+					}
+				}
+				tableNames.Add(theTableName,theTableName);
+			}
+		} 
+	}
+#>
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.Common;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using TLC_DAL;
+using TLC_Model;
+using TLC_BLL;
+
+
+
+namespace TLC_BLL
+{
+<#	// 循环生成实体类
+		int i=0;
+		foreach (string tableName in tableNames.Keys)
+		{
+#>
+<#
+			// 表注释
+			string tableRemark = string.Empty;
+			using (SqlConnection sqlConnection = new SqlConnection(musicStoreConnectionString))
+			{
+				// 获取所有用户表的查询语句
+				string getTableRemarkSql = string.Format("SELECT value FROM fn_listextendedproperty (NULL, 'schema', 'dbo', 'table', default, NULL, NULL) where name=N'MS_Description' and objname=N'{0}' ", tableName);
+				SqlCommand sqlCommand = new SqlCommand(getTableRemarkSql, sqlConnection);
+				sqlConnection.Open();
+				SqlDataReader reader = sqlCommand.ExecuteReader();
+				
+				if (reader.Read())
+				{
+					i++;
+					tableRemark = reader["value"] as string;
+					tableRemark += "业务类"+i;
+				}
+			} 
+#>
+
+	/// </summary>
+	///	<#=tableRemark #>
+	/// </summary>
+    public partial class <#=(tableNames[tableName])+"Service" #>:BaseService<<#=(tableNames[tableName]) #>>
+
+    {
+	 public override void SetCurrentDal()
+        {
+            CurrentDal = DalFactory.<#="Get"+(tableNames[tableName])+"Dal" #>();
+        }
+		
+		 
+    }
+	
+<#
+		}
+#>
+}
