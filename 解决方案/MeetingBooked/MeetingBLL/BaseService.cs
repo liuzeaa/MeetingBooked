@@ -1,6 +1,6 @@
-﻿using TLC_BLL;
-using TLC_Model;
-
+﻿using MeetingBLL;
+using MeetingDLL;
+using MeetingModel;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TLC_BLL
+namespace MeetingBLL
 {
     public abstract class BaseService<T> where T : class, new()
     {

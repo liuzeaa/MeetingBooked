@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetUpDateFile">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetUpDateFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUpDateFileResult" type="tns:ConferenceOutVersionUpdateEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ConferenceOutVersionUpdateEntity">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UpdateFile" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UpdateRootFile" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="NeedVersionUpdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PC_Version" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NeedVersionUpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="NeedVersionUpdateResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServiceDateTime">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetServiceDateTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetServiceDateTimeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConferenceOutVersionUpdateEntity" nillable="true" type="tns:ConferenceOutVersionUpdateEntity" />
+      <s:element name="boolean" type="s:boolean" />
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetUpDateFileSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUpDateFile" />
+  </wsdl:message>
+  <wsdl:message name="GetUpDateFileSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUpDateFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="NeedVersionUpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:NeedVersionUpdate" />
+  </wsdl:message>
+  <wsdl:message name="NeedVersionUpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:NeedVersionUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetServiceDateTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetServiceDateTime" />
+  </wsdl:message>
+  <wsdl:message name="GetServiceDateTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetServiceDateTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUpDateFileHttpGetIn" />
+  <wsdl:message name="GetUpDateFileHttpGetOut">
+    <wsdl:part name="Body" element="tns:ConferenceOutVersionUpdateEntity" />
+  </wsdl:message>
+  <wsdl:message name="NeedVersionUpdateHttpGetIn">
+    <wsdl:part name="PC_Version" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="NeedVersionUpdateHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetServiceDateTimeHttpGetIn" />
+  <wsdl:message name="GetServiceDateTimeHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUpDateFileHttpPostIn" />
+  <wsdl:message name="GetUpDateFileHttpPostOut">
+    <wsdl:part name="Body" element="tns:ConferenceOutVersionUpdateEntity" />
+  </wsdl:message>
+  <wsdl:message name="NeedVersionUpdateHttpPostIn">
+    <wsdl:part name="PC_Version" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="NeedVersionUpdateHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetServiceDateTimeHttpPostIn" />
+  <wsdl:message name="GetServiceDateTimeHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="VersionUpdateSoap">
+    <wsdl:operation name="GetUpDateFile">
+      <wsdl:input message="tns:GetUpDateFileSoapIn" />
+      <wsdl:output message="tns:GetUpDateFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NeedVersionUpdate">
+      <wsdl:input message="tns:NeedVersionUpdateSoapIn" />
+      <wsdl:output message="tns:NeedVersionUpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceDateTime">
+      <wsdl:input message="tns:GetServiceDateTimeSoapIn" />
+      <wsdl:output message="tns:GetServiceDateTimeSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="VersionUpdateHttpGet">
+    <wsdl:operation name="GetUpDateFile">
+      <wsdl:input message="tns:GetUpDateFileHttpGetIn" />
+      <wsdl:output message="tns:GetUpDateFileHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NeedVersionUpdate">
+      <wsdl:input message="tns:NeedVersionUpdateHttpGetIn" />
+      <wsdl:output message="tns:NeedVersionUpdateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceDateTime">
+      <wsdl:input message="tns:GetServiceDateTimeHttpGetIn" />
+      <wsdl:output message="tns:GetServiceDateTimeHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="VersionUpdateHttpPost">
+    <wsdl:operation name="GetUpDateFile">
+      <wsdl:input message="tns:GetUpDateFileHttpPostIn" />
+      <wsdl:output message="tns:GetUpDateFileHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NeedVersionUpdate">
+      <wsdl:input message="tns:NeedVersionUpdateHttpPostIn" />
+      <wsdl:output message="tns:NeedVersionUpdateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceDateTime">
+      <wsdl:input message="tns:GetServiceDateTimeHttpPostIn" />
+      <wsdl:output message="tns:GetServiceDateTimeHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="VersionUpdateSoap" type="tns:VersionUpdateSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetUpDateFile">
+      <soap:operation soapAction="http://tempuri.org/GetUpDateFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NeedVersionUpdate">
+      <soap:operation soapAction="http://tempuri.org/NeedVersionUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceDateTime">
+      <soap:operation soapAction="http://tempuri.org/GetServiceDateTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="VersionUpdateSoap12" type="tns:VersionUpdateSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetUpDateFile">
+      <soap12:operation soapAction="http://tempuri.org/GetUpDateFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NeedVersionUpdate">
+      <soap12:operation soapAction="http://tempuri.org/NeedVersionUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceDateTime">
+      <soap12:operation soapAction="http://tempuri.org/GetServiceDateTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="VersionUpdateHttpGet" type="tns:VersionUpdateHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetUpDateFile">
+      <http:operation location="/GetUpDateFile" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NeedVersionUpdate">
+      <http:operation location="/NeedVersionUpdate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceDateTime">
+      <http:operation location="/GetServiceDateTime" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="VersionUpdateHttpPost" type="tns:VersionUpdateHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetUpDateFile">
+      <http:operation location="/GetUpDateFile" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NeedVersionUpdate">
+      <http:operation location="/NeedVersionUpdate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceDateTime">
+      <http:operation location="/GetServiceDateTime" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="VersionUpdate">
+    <wsdl:port name="VersionUpdateSoap" binding="tns:VersionUpdateSoap">
+      <soap:address location="http://192.168.1.213:2015/VersionUpdate.asmx" />
+    </wsdl:port>
+    <wsdl:port name="VersionUpdateSoap12" binding="tns:VersionUpdateSoap12">
+      <soap12:address location="http://192.168.1.213:2015/VersionUpdate.asmx" />
+    </wsdl:port>
+    <wsdl:port name="VersionUpdateHttpGet" binding="tns:VersionUpdateHttpGet">
+      <http:address location="http://192.168.1.213:2015/VersionUpdate.asmx" />
+    </wsdl:port>
+    <wsdl:port name="VersionUpdateHttpPost" binding="tns:VersionUpdateHttpPost">
+      <http:address location="http://192.168.1.213:2015/VersionUpdate.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

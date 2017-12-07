@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<appSettings>
+  <!--统计不良记录产生黑名单的周期（天数）-->
+  <add key="SetPeriod" value="60" />
+  <!--统计不良记录达到规定的次数而产生黑名单-->
+  <add key="BadRecordCount" value="5" />
+  <!--黑名单禁用天数（天数）-->
+  <add key="BlackListValidDate" value="30" />
+</appSettings>

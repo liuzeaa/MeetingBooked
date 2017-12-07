@@ -17,7 +17,7 @@
 	bool useTableNamesDictionary = false;
 #>
 <#	// 连接字符串,表结构查询语句
-	string musicStoreConnectionString =@"Data Source=.;Initial Catalog=TLC;User ID=sa;password=sa@2016";    
+	string musicStoreConnectionString =@"Data Source=.;Initial Catalog=MeetingBooked;User ID=sa;password=sa@2016";    
 	                                                 
 
 #>
@@ -59,13 +59,13 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TLC_DAL;
-using TLC_Model;
-using TLC_BLL;
+using MeetingDLL;
+using MeetingModel;
+using MeetingBLL;
 
 
 
-namespace TLC_BLL
+namespace MeetingBLL
 {
 <#	// 循环生成实体类
 		int i=0;

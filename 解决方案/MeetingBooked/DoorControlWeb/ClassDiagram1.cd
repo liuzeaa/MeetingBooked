@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DoorControlWeb.Entity.BadRecordListEntity">
+    <Position X="5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAIEAEEAAAAAABAAAAAAJAAAAJAA=</HashCode>
+      <FileName>Entity\BadRecordListEntity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DoorControlWeb.Entity.BlackListEntity">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAEEAAAAAABAAAAgAAAAAAIAA=</HashCode>
+      <FileName>Entity\BlackListEntity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DoorControlWeb.Entity.DoorControlCollectData">
+    <Position X="2.75" Y="3" Width="2" />
+    <InheritanceLine Type="DoorControlWeb.Entity.ReturnDataBase" ManuallyRouted="true" FixedFromPoint="true">
+      <Path>
+        <Point X="2.25" Y="3.937" />
+        <Point X="2.75" Y="3.937" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAACAAAAAAAAACAAAAAgCAAAAAgAgAAAAI=</HashCode>
+      <FileName>Entity\DoorControlCollectData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DoorControlWeb.Entity.DoorControlEntity">
+    <Position X="5" Y="3.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAEAgAAEAAAAkAAAABAAAAAAIAEAAAAA=</HashCode>
+      <FileName>Entity\DoorControlEntity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DoorControlWeb.Entity.DoorControlInfo">
+    <Position X="2.75" Y="6" Width="2.25" />
+    <InheritanceLine Type="DoorControlWeb.Entity.ReturnDataBase" FixedFromPoint="true">
+      <Path>
+        <Point X="2.25" Y="3.937" />
+        <Point X="2.49" Y="3.937" />
+        <Point X="2.49" Y="6.816" />
+        <Point X="2.75" Y="6.816" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAABAA=</HashCode>
+      <FileName>Entity\DoorControlInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DoorControlWeb.Entity.DoorControlInfoItem">
+    <Position X="7" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAEBAAAAAAAAAAACAQAIAAAAAAA=</HashCode>
+      <FileName>Entity\DoorControlInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DoorControlWeb.Entity.DoorControlStateEntity">
+    <Position X="2.75" Y="0.5" Width="2" />
+    <InheritanceLine Type="DoorControlWeb.Entity.ReturnDataBase" ManuallyRouted="true" FixedFromPoint="true">
+      <Path>
+        <Point X="2.25" Y="3.937" />
+        <Point X="2.49" Y="3.937" />
+        <Point X="2.49" Y="1.686" />
+        <Point X="2.75" Y="1.686" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAQAAAAEAAAAAAAAAEAAAABAAAAIAAAAA=</HashCode>
+      <FileName>Entity\DoorControlStateEntity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DoorControlWeb.Entity.ReturnDataBase">
+    <Position X="0.5" Y="2.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAUEIAAAACAAAAAgAAAAAAAAAAAABAAABAAAAAQ=</HashCode>
+      <FileName>Entity\ReturnDataBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DoorControlWeb.Entity.SignListEntity">
+    <Position X="7" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAABAAAAAAEAEAAAAAAABAgAEAAIAAAAAQA=</HashCode>
+      <FileName>Entity\SignListEntity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DoorControlWeb.Entity.SuperUserListEntity">
+    <Position X="9" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAAAgABAAAAwAAAAAAAAA=</HashCode>
+      <FileName>Entity\SuperUserListEntity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DoorControlWeb.Entity.WebConfigEntity">
+    <Position X="9" Y="7.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAAAAAAAgAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entity\WebConfigEntity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DoorControlWeb.DoorControl">
+    <Position X="1.25" Y="8.25" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>oR4AE4gpEJRA6AAKgmWM9KFGyyIARGCkbmAUiFGJOrg=</HashCode>
+      <FileName>DoorControl.asmx.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DoorControlWeb.Constant">
+    <Position X="12.75" Y="4.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAACAAAAAQIAAAAkAIAACAAQAAAAAIAAAAA=</HashCode>
+      <FileName>Common\Constant.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DBHelper">
+    <Position X="15" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAACAAQAAAAAEAAAAAEAAAACAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Common\DBHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DoorControlWeb.Common.IPCheck">
+    <Position X="11" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAABCAAAAIAA=</HashCode>
+      <FileName>Common\IPCheck.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DoorControlWeb.Common.LogManage">
+    <Position X="5" Y="6.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\LogHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="DoorControlWeb.Common.CardAuthor">
+    <Position X="13" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAQIAAAAEAAAAAAAAAAUAQAAAAABAAAA=</HashCode>
+      <FileName>Common\CardAuthor.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="DoorControlWeb.Common.DoorCtrlName">
+    <Position X="9" Y="4.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEBAAAAAAAAABAAAAQAAAABEAAggAAAAAAAAI=</HashCode>
+      <FileName>Common\DoorCtrlName.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="DoorControlWeb.Common.MjParam">
+    <Position X="14.75" Y="4.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAACAAAABBAIAAAAAIQAQAAAAAAAQAIgAAACA=</HashCode>
+      <FileName>Common\MjParam.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="DoorControlWeb.Common.sMjAlarm">
+    <Position X="11" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAAAAAAgAAAAAAAgAAAAAAAAAAQA=</HashCode>
+      <FileName>Common\sMjAlarm.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="DoorControlWeb.Common.sMjRecord">
+    <Position X="11" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAACAABAAAAAAAAAAAAAAAAAAgAAAAAAAAAAQA=</HashCode>
+      <FileName>Common\sMjRecord.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

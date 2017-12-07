@@ -1,0 +1,4 @@
+F:\workplace\门禁预约系统\解决方案\MeetingBooked\DoorControlMonitor\bin\Debug\DoorControlMonitor.exe.config
+F:\workplace\门禁预约系统\解决方案\MeetingBooked\DoorControlMonitor\obj\Debug\DoorControlMonitor.csprojResolveAssemblyReference.cache
+F:\workplace\门禁预约系统\解决方案\MeetingBooked\DoorControlMonitor\obj\Debug\DoorControlMonitor.Properties.Resources.resources
+F:\workplace\门禁预约系统\解决方案\MeetingBooked\DoorControlMonitor\obj\Debug\DoorControlMonitor.csproj.GenerateResource.Cache

@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,13 +42,11 @@
   <ItemGroup>
     <Compile Include="BaseService.cs" />
     <Compile Include="BLLCommon.cs" />
-    <Compile Include="BLLTemplate.cs" />
     <Compile Include="BLLTemplate1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BLLTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -58,6 +57,16 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MeetingDLL\MeetingDLL.csproj">
+      <Project>{5fe8136f-b916-4fda-a84a-fe872507dde1}</Project>
+      <Name>MeetingDLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MeetingModel\MeetingModel.csproj">
+      <Project>{93e015f0-4004-465c-a9da-014ce69264b9}</Project>
+      <Name>MeetingModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

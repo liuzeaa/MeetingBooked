@@ -1,0 +1,70 @@
+﻿<Window xmlns:View="clr-namespace:ConferenceRoomOutMonitor.View"  x:Class="ConferenceRoomOutMonitor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowStyle="SingleBorderWindow"  Background="White"
+       
+        Title="会议跟踪平台"  WindowState="Maximized">
+    <Border Margin="3" BorderBrush="Silver" BorderThickness="1">
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="0.3*"/>
+        </Grid.ColumnDefinitions>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Border BorderBrush="Black" BorderThickness="0,0,0,1">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" Opacity="0.2" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="0"/>
+                        <GradientStop Color="#FFC8C8C8" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <StackPanel Margin="10,0,0,0" Orientation="Horizontal" VerticalAlignment="Center">
+                    <StackPanel.Resources>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="FontSize" Value="13.5"/>
+                        </Style>
+                    </StackPanel.Resources>
+                    <TextBlock Text="会 议 室 名 称："/>
+                    <TextBlock x:Name="txtRoom_Name" />
+                </StackPanel>
+            </Border>
+            <Image  x:Name="img" Stretch="Fill" Grid.Row="1"></Image>
+        </Grid>
+        <Border Grid.Column="1" BorderBrush="Silver" BorderThickness="5,0,0,0" Background="White">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Border BorderBrush="Black" BorderThickness="0,0,0,1">
+                    <Border.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" Opacity="0.2" StartPoint="0.5,0">
+                            <GradientStop Color="White" Offset="0"/>
+                            <GradientStop Color="#FFC8C8C8" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <StackPanel Margin="10,0,0,0" Orientation="Horizontal" VerticalAlignment="Center">
+                        <StackPanel.Resources>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="FontSize" Value="13.5"/>
+                            </Style>
+                        </StackPanel.Resources>
+                        <TextBlock Text="会 议 信 息"/>
+                        <TextBlock />
+                    </StackPanel>
+                </Border>
+
+                <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                    <StackPanel  x:Name="stackPanel">
+
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
+        </Border>
+    </Grid>
+    </Border>
+</Window>

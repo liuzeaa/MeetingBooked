@@ -1,0 +1,9 @@
+F:\workplace\门禁预约系统\解决方案\MeetingBooked\MeetingDLL\obj\Debug\MeetingDLL.csprojResolveAssemblyReference.cache
+F:\workplace\门禁预约系统\解决方案\MeetingBooked\MeetingDLL\bin\Debug\MeetingDLL.dll
+F:\workplace\门禁预约系统\解决方案\MeetingBooked\MeetingDLL\bin\Debug\MeetingDLL.pdb
+F:\workplace\门禁预约系统\解决方案\MeetingBooked\MeetingDLL\bin\Debug\MeetingModel.dll
+F:\workplace\门禁预约系统\解决方案\MeetingBooked\MeetingDLL\bin\Debug\log4net.dll
+F:\workplace\门禁预约系统\解决方案\MeetingBooked\MeetingDLL\bin\Debug\ChnCharInfo.dll
+F:\workplace\门禁预约系统\解决方案\MeetingBooked\MeetingDLL\bin\Debug\MeetingModel.pdb
+F:\workplace\门禁预约系统\解决方案\MeetingBooked\MeetingDLL\obj\Debug\MeetingDLL.dll
+F:\workplace\门禁预约系统\解决方案\MeetingBooked\MeetingDLL\obj\Debug\MeetingDLL.pdb

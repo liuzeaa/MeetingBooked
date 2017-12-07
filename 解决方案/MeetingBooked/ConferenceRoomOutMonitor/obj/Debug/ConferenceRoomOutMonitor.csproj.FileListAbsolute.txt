@@ -1,0 +1,4 @@
+F:\workplace\门禁预约系统\解决方案\MeetingBooked\ConferenceRoomOutMonitor\bin\Debug\ConferenceRoomOutMonitor.exe.config
+F:\workplace\门禁预约系统\解决方案\MeetingBooked\ConferenceRoomOutMonitor\obj\Debug\ConferenceRoomOutMonitor.csprojResolveAssemblyReference.cache
+F:\workplace\门禁预约系统\解决方案\MeetingBooked\ConferenceRoomOutMonitor\obj\Debug\ConferenceRoomOutMonitor.Properties.Resources.resources
+F:\workplace\门禁预约系统\解决方案\MeetingBooked\ConferenceRoomOutMonitor\obj\Debug\ConferenceRoomOutMonitor.csproj.GenerateResource.Cache

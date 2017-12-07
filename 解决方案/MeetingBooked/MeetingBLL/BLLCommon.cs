@@ -1,4 +1,5 @@
 ﻿
+using MeetingModel;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,9 +10,9 @@ using System.Runtime.Serialization.Json;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using TLC_Model;
 
-namespace TLC_BLL
+
+namespace MeetingBLL
 {
     public class BLLCommon
     {

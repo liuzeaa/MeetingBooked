@@ -30,8 +30,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ChnCharInfo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=18f031bd02e5e291, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\ChnCharInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -39,8 +50,58 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Common\AnimalSetting.cs" />
+    <Compile Include="Common\BLLCommon.cs" />
+    <Compile Include="Common\ConfigHelper.cs" />
+    <Compile Include="Common\ConvertHelper.cs" />
+    <Compile Include="Common\ConvertToENU.cs" />
+    <Compile Include="Common\DES\DESEncrypt.cs" />
+    <Compile Include="Common\DES\Utils.cs" />
+    <Compile Include="Common\EncryptHelper.cs" />
+    <Compile Include="Common\FileManage.cs" />
+    <Compile Include="Common\HtmlImgRegex.cs" />
+    <Compile Include="Common\IPHelper.cs" />
+    <Compile Include="Common\LogHelper.cs" />
+    <Compile Include="Common\NetHelper.cs" />
+    <Compile Include="Common\RequestHelper.cs" />
+    <Compile Include="Common\Split_Hepler.cs" />
+    <Compile Include="Common\SQLHelp.cs" />
+    <Compile Include="Common\String\ChineseCode.cs" />
+    <Compile Include="Common\String\ChineseToPinyin.cs" />
+    <Compile Include="Common\String\DateTimeManger.cs" />
+    <Compile Include="Common\String\Enum\EnumHelper.cs" />
+    <Compile Include="Common\String\MoneyToChinese.cs" />
+    <Compile Include="Common\String\ObjectExtension.cs" />
+    <Compile Include="Common\String\StringHelper.cs" />
+    <Compile Include="Common\String\Validation\ValidationHelper.cs" />
+    <Compile Include="Common\SysEnums.cs" />
+    <Compile Include="Common\TimeMange.cs" />
+    <Compile Include="Common\XmlHelper.cs" />
+    <Compile Include="EntityOuter\JsonModel.cs" />
+    <Compile Include="EntityOuter\PagedDataModel.cs" />
+    <Compile Include="Enums\IsCompleate.cs" />
+    <Compile Include="Enums\IsEnable.cs" />
+    <Compile Include="ModelTemplate.cs" />
+    <Compile Include="ModelTemplate1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelTemplate.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TableBase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DLL\ChnCharInfo.dll" />
+    <Content Include="DLL\log4net.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ModelTemplate.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelTemplate1.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,0 +1,1797 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s1="http://tempuri.org/AbstractTypes" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="SearchDoorControl">
+        <s:complexType />
+      </s:element>
+      <s:element name="SearchDoorControlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchDoorControlResult" type="tns:DoorControlInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DoorControlInfo">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ReturnDataBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="DoorControlInfoItemList" type="tns:ArrayOfDoorControlInfoItem" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ReturnDataBase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Method" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InnerError" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrMessage" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Successed" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Return_Param" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfDoorControlInfoItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DoorControlInfoItem" nillable="true" type="tns:DoorControlInfoItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DoorControlInfoItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ControlIP" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ControlPort" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mac" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SearialNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Type" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SetTime">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DoorControlIp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DoorControlPort" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetTimeResult" type="tns:ReturnDataBase" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTime">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DoorControlIp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DoorControlPort" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTimeResult" type="tns:ReturnDataBase" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetMjParam">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DoorControlIp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DoorControlPort" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nDoorIndex" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="mjParam" type="tns:MjParam" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="MjParam">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DoorOpenTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DoorOpenAlertTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DoorOpenType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DuoChongShenFen" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DoorOpenOutTimeAlert" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DoorNoResoneOpenAlert" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DoorHuSuoFlag" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DoorOpenOrCloseFlag" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DoorButtonTimeStoneFlag" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardAndPwdTimeStoneFlag" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DuoChongFlag" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReaderModel" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SetMjParamResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetMjParamResult" type="tns:ReturnDataBase" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ForceOpenDoor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DoorControlIp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DoorControlPort" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nDoorIndex" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ForceOpenDoorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ForceOpenDoorResult" type="tns:ReturnDataBase" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ForceCloseDoor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DoorControlIp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DoorControlPort" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nDoorIndex" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ForceCloseDoorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ForceCloseDoorResult" type="tns:ReturnDataBase" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OpenDoor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DoorControlIp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DoorControlPort" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nDoorIndex" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OpenDoorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OpenDoorResult" type="tns:ReturnDataBase" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CanclForceDoor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DoorControlIp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DoorControlPort" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nDoorIndex" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CanclForceDoorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CanclForceDoorResult" type="tns:ReturnDataBase" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryDoorStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DoorControlIp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DoorControlPort" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nDoorIndex" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QueryDoorStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryDoorStatusResult" type="tns:DoorControlStateEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DoorControlStateEntity">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ReturnDataBase">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ForceStatus" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DoorStatus" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CtrlTime" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="SetTimeZone">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DoorControlIp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DoorControlPort" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nDoorIndex" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetTimeZoneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetTimeZoneResult" type="tns:ReturnDataBase" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetPreTimeZone">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DoorControlIp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DoorControlPort" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nDoorIndex" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="PreTimeZone" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SetPreTimeZoneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetPreTimeZoneResult" type="tns:ReturnDataBase" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetMjHoliday">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DoorControlIp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DoorControlPort" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nDoorIndex" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strHoliday" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nClearAll" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetMjHolidayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetMjHolidayResult" type="tns:ReturnDataBase" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetMjAuthor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DoorControlIp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DoorControlPort" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nClearAll" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardArray" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDel" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetMjAuthorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetMjAuthorResult" type="tns:ReturnDataBase" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ClearMJAuthor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DoorControlIp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DoorControlPort" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ClearMJAuthorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClearMJAuthorResult" type="tns:DoorControlCollectData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DoorControlCollectData">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ReturnDataBase">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="MjAlarmCount" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="MjAlarm" type="tns:ArrayOfSMjAlarm" />
+              <s:element minOccurs="0" maxOccurs="1" name="MjRecord" type="tns:ArrayOfSMjRecord" />
+              <s:element minOccurs="1" maxOccurs="1" name="MjRecordCount" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfSMjAlarm">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="sMjAlarm" type="tns:sMjAlarm" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="sMjAlarm">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="BaoJingLeixing" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BaoJingQizhi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MenXuhao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Time" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfSMjRecord">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="sMjRecord" type="tns:sMjRecord" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="sMjRecord">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="KahaoOrMima" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Time" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MenXuhao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="JinChu" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShuakaBiaozhi" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DoorControlIp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DoorControlPort" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDataResult" type="tns:DoorControlCollectData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDoorEntityWhiteList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetDoorEntityWhiteListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDoorEntityWhiteListResult" type="tns:ArrayOfDoorControlEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDoorControlEntity">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DoorControlEntity" nillable="true" type="tns:DoorControlEntity" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DoorControlEntity">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Guid" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardList" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StartDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EndDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ControlIP" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ControlPort" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsWrite" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreditCardLimit" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CreditCardList" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetNowDateDoorEntityWhiteList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetNowDateDoorEntityWhiteListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNowDateDoorEntityWhiteListResult" type="tns:ArrayOfDoorControlEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOutNowDateDoorEntityWhiteList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetOutNowDateDoorEntityWhiteListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOutNowDateDoorEntityWhiteListResult" type="tns:ArrayOfDoorControlEntity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertOneWhiteList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ControlIp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ControlPort" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="StartDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EndDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CardList" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertOneWhiteListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertOneWhiteListResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RunOneMjWork">
+        <s:complexType />
+      </s:element>
+      <s:element name="RunOneMjWorkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RunOneMjWorkResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DoorControlInfo" nillable="true" type="tns:DoorControlInfo" />
+      <s:element name="ReturnDataBase" nillable="true" type="tns:ReturnDataBase" />
+      <s:element name="DoorControlStateEntity" nillable="true" type="tns:DoorControlStateEntity" />
+      <s:element name="DoorControlCollectData" nillable="true" type="tns:DoorControlCollectData" />
+      <s:element name="ArrayOfDoorControlEntity" nillable="true" type="tns:ArrayOfDoorControlEntity" />
+      <s:element name="boolean" type="s:boolean" />
+    </s:schema>
+    <s:schema targetNamespace="http://tempuri.org/AbstractTypes">
+      <s:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <s:complexType name="StringArray">
+        <s:complexContent mixed="false">
+          <s:restriction base="soapenc:Array">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="String" type="s:string" />
+            </s:sequence>
+          </s:restriction>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SearchDoorControlSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchDoorControl" />
+  </wsdl:message>
+  <wsdl:message name="SearchDoorControlSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchDoorControlResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:SetTime" />
+  </wsdl:message>
+  <wsdl:message name="SetTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:SetTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTime" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetMjParamSoapIn">
+    <wsdl:part name="parameters" element="tns:SetMjParam" />
+  </wsdl:message>
+  <wsdl:message name="SetMjParamSoapOut">
+    <wsdl:part name="parameters" element="tns:SetMjParamResponse" />
+  </wsdl:message>
+  <wsdl:message name="ForceOpenDoorSoapIn">
+    <wsdl:part name="parameters" element="tns:ForceOpenDoor" />
+  </wsdl:message>
+  <wsdl:message name="ForceOpenDoorSoapOut">
+    <wsdl:part name="parameters" element="tns:ForceOpenDoorResponse" />
+  </wsdl:message>
+  <wsdl:message name="ForceCloseDoorSoapIn">
+    <wsdl:part name="parameters" element="tns:ForceCloseDoor" />
+  </wsdl:message>
+  <wsdl:message name="ForceCloseDoorSoapOut">
+    <wsdl:part name="parameters" element="tns:ForceCloseDoorResponse" />
+  </wsdl:message>
+  <wsdl:message name="OpenDoorSoapIn">
+    <wsdl:part name="parameters" element="tns:OpenDoor" />
+  </wsdl:message>
+  <wsdl:message name="OpenDoorSoapOut">
+    <wsdl:part name="parameters" element="tns:OpenDoorResponse" />
+  </wsdl:message>
+  <wsdl:message name="CanclForceDoorSoapIn">
+    <wsdl:part name="parameters" element="tns:CanclForceDoor" />
+  </wsdl:message>
+  <wsdl:message name="CanclForceDoorSoapOut">
+    <wsdl:part name="parameters" element="tns:CanclForceDoorResponse" />
+  </wsdl:message>
+  <wsdl:message name="QueryDoorStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryDoorStatus" />
+  </wsdl:message>
+  <wsdl:message name="QueryDoorStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryDoorStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetTimeZoneSoapIn">
+    <wsdl:part name="parameters" element="tns:SetTimeZone" />
+  </wsdl:message>
+  <wsdl:message name="SetTimeZoneSoapOut">
+    <wsdl:part name="parameters" element="tns:SetTimeZoneResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetPreTimeZoneSoapIn">
+    <wsdl:part name="parameters" element="tns:SetPreTimeZone" />
+  </wsdl:message>
+  <wsdl:message name="SetPreTimeZoneSoapOut">
+    <wsdl:part name="parameters" element="tns:SetPreTimeZoneResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetMjHolidaySoapIn">
+    <wsdl:part name="parameters" element="tns:SetMjHoliday" />
+  </wsdl:message>
+  <wsdl:message name="SetMjHolidaySoapOut">
+    <wsdl:part name="parameters" element="tns:SetMjHolidayResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetMjAuthorSoapIn">
+    <wsdl:part name="parameters" element="tns:SetMjAuthor" />
+  </wsdl:message>
+  <wsdl:message name="SetMjAuthorSoapOut">
+    <wsdl:part name="parameters" element="tns:SetMjAuthorResponse" />
+  </wsdl:message>
+  <wsdl:message name="ClearMJAuthorSoapIn">
+    <wsdl:part name="parameters" element="tns:ClearMJAuthor" />
+  </wsdl:message>
+  <wsdl:message name="ClearMJAuthorSoapOut">
+    <wsdl:part name="parameters" element="tns:ClearMJAuthorResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetData" />
+  </wsdl:message>
+  <wsdl:message name="GetDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDoorEntityWhiteListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDoorEntityWhiteList" />
+  </wsdl:message>
+  <wsdl:message name="GetDoorEntityWhiteListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDoorEntityWhiteListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNowDateDoorEntityWhiteListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNowDateDoorEntityWhiteList" />
+  </wsdl:message>
+  <wsdl:message name="GetNowDateDoorEntityWhiteListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNowDateDoorEntityWhiteListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOutNowDateDoorEntityWhiteListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOutNowDateDoorEntityWhiteList" />
+  </wsdl:message>
+  <wsdl:message name="GetOutNowDateDoorEntityWhiteListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOutNowDateDoorEntityWhiteListResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertOneWhiteListSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertOneWhiteList" />
+  </wsdl:message>
+  <wsdl:message name="InsertOneWhiteListSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertOneWhiteListResponse" />
+  </wsdl:message>
+  <wsdl:message name="RunOneMjWorkSoapIn">
+    <wsdl:part name="parameters" element="tns:RunOneMjWork" />
+  </wsdl:message>
+  <wsdl:message name="RunOneMjWorkSoapOut">
+    <wsdl:part name="parameters" element="tns:RunOneMjWorkResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchDoorControlHttpGetIn" />
+  <wsdl:message name="SearchDoorControlHttpGetOut">
+    <wsdl:part name="Body" element="tns:DoorControlInfo" />
+  </wsdl:message>
+  <wsdl:message name="SetTimeHttpGetIn">
+    <wsdl:part name="DoorControlIp" type="s:string" />
+    <wsdl:part name="DoorControlPort" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetTimeHttpGetOut">
+    <wsdl:part name="Body" element="tns:ReturnDataBase" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeHttpGetIn">
+    <wsdl:part name="DoorControlIp" type="s:string" />
+    <wsdl:part name="DoorControlPort" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeHttpGetOut">
+    <wsdl:part name="Body" element="tns:ReturnDataBase" />
+  </wsdl:message>
+  <wsdl:message name="ForceOpenDoorHttpGetIn">
+    <wsdl:part name="DoorControlIp" type="s:string" />
+    <wsdl:part name="DoorControlPort" type="s:string" />
+    <wsdl:part name="nDoorIndex" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ForceOpenDoorHttpGetOut">
+    <wsdl:part name="Body" element="tns:ReturnDataBase" />
+  </wsdl:message>
+  <wsdl:message name="ForceCloseDoorHttpGetIn">
+    <wsdl:part name="DoorControlIp" type="s:string" />
+    <wsdl:part name="DoorControlPort" type="s:string" />
+    <wsdl:part name="nDoorIndex" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ForceCloseDoorHttpGetOut">
+    <wsdl:part name="Body" element="tns:ReturnDataBase" />
+  </wsdl:message>
+  <wsdl:message name="OpenDoorHttpGetIn">
+    <wsdl:part name="DoorControlIp" type="s:string" />
+    <wsdl:part name="DoorControlPort" type="s:string" />
+    <wsdl:part name="nDoorIndex" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OpenDoorHttpGetOut">
+    <wsdl:part name="Body" element="tns:ReturnDataBase" />
+  </wsdl:message>
+  <wsdl:message name="CanclForceDoorHttpGetIn">
+    <wsdl:part name="DoorControlIp" type="s:string" />
+    <wsdl:part name="DoorControlPort" type="s:string" />
+    <wsdl:part name="nDoorIndex" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CanclForceDoorHttpGetOut">
+    <wsdl:part name="Body" element="tns:ReturnDataBase" />
+  </wsdl:message>
+  <wsdl:message name="QueryDoorStatusHttpGetIn">
+    <wsdl:part name="DoorControlIp" type="s:string" />
+    <wsdl:part name="DoorControlPort" type="s:string" />
+    <wsdl:part name="nDoorIndex" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="QueryDoorStatusHttpGetOut">
+    <wsdl:part name="Body" element="tns:DoorControlStateEntity" />
+  </wsdl:message>
+  <wsdl:message name="SetTimeZoneHttpGetIn">
+    <wsdl:part name="DoorControlIp" type="s:string" />
+    <wsdl:part name="DoorControlPort" type="s:string" />
+    <wsdl:part name="nDoorIndex" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetTimeZoneHttpGetOut">
+    <wsdl:part name="Body" element="tns:ReturnDataBase" />
+  </wsdl:message>
+  <wsdl:message name="SetPreTimeZoneHttpGetIn">
+    <wsdl:part name="DoorControlIp" type="s:string" />
+    <wsdl:part name="DoorControlPort" type="s:string" />
+    <wsdl:part name="nDoorIndex" type="s:string" />
+    <wsdl:part name="PreTimeZone" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="SetPreTimeZoneHttpGetOut">
+    <wsdl:part name="Body" element="tns:ReturnDataBase" />
+  </wsdl:message>
+  <wsdl:message name="SetMjHolidayHttpGetIn">
+    <wsdl:part name="DoorControlIp" type="s:string" />
+    <wsdl:part name="DoorControlPort" type="s:string" />
+    <wsdl:part name="nDoorIndex" type="s:string" />
+    <wsdl:part name="strHoliday" type="s:string" />
+    <wsdl:part name="nClearAll" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetMjHolidayHttpGetOut">
+    <wsdl:part name="Body" element="tns:ReturnDataBase" />
+  </wsdl:message>
+  <wsdl:message name="SetMjAuthorHttpGetIn">
+    <wsdl:part name="DoorControlIp" type="s:string" />
+    <wsdl:part name="DoorControlPort" type="s:string" />
+    <wsdl:part name="nClearAll" type="s:string" />
+    <wsdl:part name="cardArray" type="s1:StringArray" />
+    <wsdl:part name="strDel" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetMjAuthorHttpGetOut">
+    <wsdl:part name="Body" element="tns:ReturnDataBase" />
+  </wsdl:message>
+  <wsdl:message name="ClearMJAuthorHttpGetIn">
+    <wsdl:part name="DoorControlIp" type="s:string" />
+    <wsdl:part name="DoorControlPort" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ClearMJAuthorHttpGetOut">
+    <wsdl:part name="Body" element="tns:DoorControlCollectData" />
+  </wsdl:message>
+  <wsdl:message name="GetDataHttpGetIn">
+    <wsdl:part name="DoorControlIp" type="s:string" />
+    <wsdl:part name="DoorControlPort" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDataHttpGetOut">
+    <wsdl:part name="Body" element="tns:DoorControlCollectData" />
+  </wsdl:message>
+  <wsdl:message name="GetDoorEntityWhiteListHttpGetIn" />
+  <wsdl:message name="GetDoorEntityWhiteListHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfDoorControlEntity" />
+  </wsdl:message>
+  <wsdl:message name="GetNowDateDoorEntityWhiteListHttpGetIn" />
+  <wsdl:message name="GetNowDateDoorEntityWhiteListHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfDoorControlEntity" />
+  </wsdl:message>
+  <wsdl:message name="GetOutNowDateDoorEntityWhiteListHttpGetIn" />
+  <wsdl:message name="GetOutNowDateDoorEntityWhiteListHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfDoorControlEntity" />
+  </wsdl:message>
+  <wsdl:message name="InsertOneWhiteListHttpGetIn">
+    <wsdl:part name="ControlIp" type="s:string" />
+    <wsdl:part name="ControlPort" type="s:string" />
+    <wsdl:part name="StartDate" type="s:string" />
+    <wsdl:part name="EndDate" type="s:string" />
+    <wsdl:part name="CardList" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertOneWhiteListHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="RunOneMjWorkHttpGetIn" />
+  <wsdl:message name="RunOneMjWorkHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="SearchDoorControlHttpPostIn" />
+  <wsdl:message name="SearchDoorControlHttpPostOut">
+    <wsdl:part name="Body" element="tns:DoorControlInfo" />
+  </wsdl:message>
+  <wsdl:message name="SetTimeHttpPostIn">
+    <wsdl:part name="DoorControlIp" type="s:string" />
+    <wsdl:part name="DoorControlPort" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetTimeHttpPostOut">
+    <wsdl:part name="Body" element="tns:ReturnDataBase" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeHttpPostIn">
+    <wsdl:part name="DoorControlIp" type="s:string" />
+    <wsdl:part name="DoorControlPort" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeHttpPostOut">
+    <wsdl:part name="Body" element="tns:ReturnDataBase" />
+  </wsdl:message>
+  <wsdl:message name="ForceOpenDoorHttpPostIn">
+    <wsdl:part name="DoorControlIp" type="s:string" />
+    <wsdl:part name="DoorControlPort" type="s:string" />
+    <wsdl:part name="nDoorIndex" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ForceOpenDoorHttpPostOut">
+    <wsdl:part name="Body" element="tns:ReturnDataBase" />
+  </wsdl:message>
+  <wsdl:message name="ForceCloseDoorHttpPostIn">
+    <wsdl:part name="DoorControlIp" type="s:string" />
+    <wsdl:part name="DoorControlPort" type="s:string" />
+    <wsdl:part name="nDoorIndex" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ForceCloseDoorHttpPostOut">
+    <wsdl:part name="Body" element="tns:ReturnDataBase" />
+  </wsdl:message>
+  <wsdl:message name="OpenDoorHttpPostIn">
+    <wsdl:part name="DoorControlIp" type="s:string" />
+    <wsdl:part name="DoorControlPort" type="s:string" />
+    <wsdl:part name="nDoorIndex" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OpenDoorHttpPostOut">
+    <wsdl:part name="Body" element="tns:ReturnDataBase" />
+  </wsdl:message>
+  <wsdl:message name="CanclForceDoorHttpPostIn">
+    <wsdl:part name="DoorControlIp" type="s:string" />
+    <wsdl:part name="DoorControlPort" type="s:string" />
+    <wsdl:part name="nDoorIndex" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CanclForceDoorHttpPostOut">
+    <wsdl:part name="Body" element="tns:ReturnDataBase" />
+  </wsdl:message>
+  <wsdl:message name="QueryDoorStatusHttpPostIn">
+    <wsdl:part name="DoorControlIp" type="s:string" />
+    <wsdl:part name="DoorControlPort" type="s:string" />
+    <wsdl:part name="nDoorIndex" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="QueryDoorStatusHttpPostOut">
+    <wsdl:part name="Body" element="tns:DoorControlStateEntity" />
+  </wsdl:message>
+  <wsdl:message name="SetTimeZoneHttpPostIn">
+    <wsdl:part name="DoorControlIp" type="s:string" />
+    <wsdl:part name="DoorControlPort" type="s:string" />
+    <wsdl:part name="nDoorIndex" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetTimeZoneHttpPostOut">
+    <wsdl:part name="Body" element="tns:ReturnDataBase" />
+  </wsdl:message>
+  <wsdl:message name="SetPreTimeZoneHttpPostIn">
+    <wsdl:part name="DoorControlIp" type="s:string" />
+    <wsdl:part name="DoorControlPort" type="s:string" />
+    <wsdl:part name="nDoorIndex" type="s:string" />
+    <wsdl:part name="PreTimeZone" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="SetPreTimeZoneHttpPostOut">
+    <wsdl:part name="Body" element="tns:ReturnDataBase" />
+  </wsdl:message>
+  <wsdl:message name="SetMjHolidayHttpPostIn">
+    <wsdl:part name="DoorControlIp" type="s:string" />
+    <wsdl:part name="DoorControlPort" type="s:string" />
+    <wsdl:part name="nDoorIndex" type="s:string" />
+    <wsdl:part name="strHoliday" type="s:string" />
+    <wsdl:part name="nClearAll" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetMjHolidayHttpPostOut">
+    <wsdl:part name="Body" element="tns:ReturnDataBase" />
+  </wsdl:message>
+  <wsdl:message name="SetMjAuthorHttpPostIn">
+    <wsdl:part name="DoorControlIp" type="s:string" />
+    <wsdl:part name="DoorControlPort" type="s:string" />
+    <wsdl:part name="nClearAll" type="s:string" />
+    <wsdl:part name="cardArray" type="s1:StringArray" />
+    <wsdl:part name="strDel" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetMjAuthorHttpPostOut">
+    <wsdl:part name="Body" element="tns:ReturnDataBase" />
+  </wsdl:message>
+  <wsdl:message name="ClearMJAuthorHttpPostIn">
+    <wsdl:part name="DoorControlIp" type="s:string" />
+    <wsdl:part name="DoorControlPort" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ClearMJAuthorHttpPostOut">
+    <wsdl:part name="Body" element="tns:DoorControlCollectData" />
+  </wsdl:message>
+  <wsdl:message name="GetDataHttpPostIn">
+    <wsdl:part name="DoorControlIp" type="s:string" />
+    <wsdl:part name="DoorControlPort" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetDataHttpPostOut">
+    <wsdl:part name="Body" element="tns:DoorControlCollectData" />
+  </wsdl:message>
+  <wsdl:message name="GetDoorEntityWhiteListHttpPostIn" />
+  <wsdl:message name="GetDoorEntityWhiteListHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfDoorControlEntity" />
+  </wsdl:message>
+  <wsdl:message name="GetNowDateDoorEntityWhiteListHttpPostIn" />
+  <wsdl:message name="GetNowDateDoorEntityWhiteListHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfDoorControlEntity" />
+  </wsdl:message>
+  <wsdl:message name="GetOutNowDateDoorEntityWhiteListHttpPostIn" />
+  <wsdl:message name="GetOutNowDateDoorEntityWhiteListHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfDoorControlEntity" />
+  </wsdl:message>
+  <wsdl:message name="InsertOneWhiteListHttpPostIn">
+    <wsdl:part name="ControlIp" type="s:string" />
+    <wsdl:part name="ControlPort" type="s:string" />
+    <wsdl:part name="StartDate" type="s:string" />
+    <wsdl:part name="EndDate" type="s:string" />
+    <wsdl:part name="CardList" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertOneWhiteListHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="RunOneMjWorkHttpPostIn" />
+  <wsdl:message name="RunOneMjWorkHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:portType name="DoorControlSoap">
+    <wsdl:operation name="SearchDoorControl">
+      <wsdl:input message="tns:SearchDoorControlSoapIn" />
+      <wsdl:output message="tns:SearchDoorControlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetTime">
+      <wsdl:input message="tns:SetTimeSoapIn" />
+      <wsdl:output message="tns:SetTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTime">
+      <wsdl:input message="tns:GetTimeSoapIn" />
+      <wsdl:output message="tns:GetTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetMjParam">
+      <wsdl:input message="tns:SetMjParamSoapIn" />
+      <wsdl:output message="tns:SetMjParamSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ForceOpenDoor">
+      <wsdl:input message="tns:ForceOpenDoorSoapIn" />
+      <wsdl:output message="tns:ForceOpenDoorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ForceCloseDoor">
+      <wsdl:input message="tns:ForceCloseDoorSoapIn" />
+      <wsdl:output message="tns:ForceCloseDoorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OpenDoor">
+      <wsdl:input message="tns:OpenDoorSoapIn" />
+      <wsdl:output message="tns:OpenDoorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CanclForceDoor">
+      <wsdl:input message="tns:CanclForceDoorSoapIn" />
+      <wsdl:output message="tns:CanclForceDoorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryDoorStatus">
+      <wsdl:input message="tns:QueryDoorStatusSoapIn" />
+      <wsdl:output message="tns:QueryDoorStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetTimeZone">
+      <wsdl:input message="tns:SetTimeZoneSoapIn" />
+      <wsdl:output message="tns:SetTimeZoneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetPreTimeZone">
+      <wsdl:input message="tns:SetPreTimeZoneSoapIn" />
+      <wsdl:output message="tns:SetPreTimeZoneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetMjHoliday">
+      <wsdl:input message="tns:SetMjHolidaySoapIn" />
+      <wsdl:output message="tns:SetMjHolidaySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetMjAuthor">
+      <wsdl:input message="tns:SetMjAuthorSoapIn" />
+      <wsdl:output message="tns:SetMjAuthorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearMJAuthor">
+      <wsdl:input message="tns:ClearMJAuthorSoapIn" />
+      <wsdl:output message="tns:ClearMJAuthorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetData">
+      <wsdl:input message="tns:GetDataSoapIn" />
+      <wsdl:output message="tns:GetDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDoorEntityWhiteList">
+      <wsdl:input message="tns:GetDoorEntityWhiteListSoapIn" />
+      <wsdl:output message="tns:GetDoorEntityWhiteListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNowDateDoorEntityWhiteList">
+      <wsdl:input message="tns:GetNowDateDoorEntityWhiteListSoapIn" />
+      <wsdl:output message="tns:GetNowDateDoorEntityWhiteListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOutNowDateDoorEntityWhiteList">
+      <wsdl:input message="tns:GetOutNowDateDoorEntityWhiteListSoapIn" />
+      <wsdl:output message="tns:GetOutNowDateDoorEntityWhiteListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertOneWhiteList">
+      <wsdl:input message="tns:InsertOneWhiteListSoapIn" />
+      <wsdl:output message="tns:InsertOneWhiteListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RunOneMjWork">
+      <wsdl:input message="tns:RunOneMjWorkSoapIn" />
+      <wsdl:output message="tns:RunOneMjWorkSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="DoorControlHttpGet">
+    <wsdl:operation name="SearchDoorControl">
+      <wsdl:input message="tns:SearchDoorControlHttpGetIn" />
+      <wsdl:output message="tns:SearchDoorControlHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetTime">
+      <wsdl:input message="tns:SetTimeHttpGetIn" />
+      <wsdl:output message="tns:SetTimeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTime">
+      <wsdl:input message="tns:GetTimeHttpGetIn" />
+      <wsdl:output message="tns:GetTimeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ForceOpenDoor">
+      <wsdl:input message="tns:ForceOpenDoorHttpGetIn" />
+      <wsdl:output message="tns:ForceOpenDoorHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ForceCloseDoor">
+      <wsdl:input message="tns:ForceCloseDoorHttpGetIn" />
+      <wsdl:output message="tns:ForceCloseDoorHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OpenDoor">
+      <wsdl:input message="tns:OpenDoorHttpGetIn" />
+      <wsdl:output message="tns:OpenDoorHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CanclForceDoor">
+      <wsdl:input message="tns:CanclForceDoorHttpGetIn" />
+      <wsdl:output message="tns:CanclForceDoorHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryDoorStatus">
+      <wsdl:input message="tns:QueryDoorStatusHttpGetIn" />
+      <wsdl:output message="tns:QueryDoorStatusHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetTimeZone">
+      <wsdl:input message="tns:SetTimeZoneHttpGetIn" />
+      <wsdl:output message="tns:SetTimeZoneHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetPreTimeZone">
+      <wsdl:input message="tns:SetPreTimeZoneHttpGetIn" />
+      <wsdl:output message="tns:SetPreTimeZoneHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetMjHoliday">
+      <wsdl:input message="tns:SetMjHolidayHttpGetIn" />
+      <wsdl:output message="tns:SetMjHolidayHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetMjAuthor">
+      <wsdl:input message="tns:SetMjAuthorHttpGetIn" />
+      <wsdl:output message="tns:SetMjAuthorHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearMJAuthor">
+      <wsdl:input message="tns:ClearMJAuthorHttpGetIn" />
+      <wsdl:output message="tns:ClearMJAuthorHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetData">
+      <wsdl:input message="tns:GetDataHttpGetIn" />
+      <wsdl:output message="tns:GetDataHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDoorEntityWhiteList">
+      <wsdl:input message="tns:GetDoorEntityWhiteListHttpGetIn" />
+      <wsdl:output message="tns:GetDoorEntityWhiteListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNowDateDoorEntityWhiteList">
+      <wsdl:input message="tns:GetNowDateDoorEntityWhiteListHttpGetIn" />
+      <wsdl:output message="tns:GetNowDateDoorEntityWhiteListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOutNowDateDoorEntityWhiteList">
+      <wsdl:input message="tns:GetOutNowDateDoorEntityWhiteListHttpGetIn" />
+      <wsdl:output message="tns:GetOutNowDateDoorEntityWhiteListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertOneWhiteList">
+      <wsdl:input message="tns:InsertOneWhiteListHttpGetIn" />
+      <wsdl:output message="tns:InsertOneWhiteListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RunOneMjWork">
+      <wsdl:input message="tns:RunOneMjWorkHttpGetIn" />
+      <wsdl:output message="tns:RunOneMjWorkHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="DoorControlHttpPost">
+    <wsdl:operation name="SearchDoorControl">
+      <wsdl:input message="tns:SearchDoorControlHttpPostIn" />
+      <wsdl:output message="tns:SearchDoorControlHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetTime">
+      <wsdl:input message="tns:SetTimeHttpPostIn" />
+      <wsdl:output message="tns:SetTimeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTime">
+      <wsdl:input message="tns:GetTimeHttpPostIn" />
+      <wsdl:output message="tns:GetTimeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ForceOpenDoor">
+      <wsdl:input message="tns:ForceOpenDoorHttpPostIn" />
+      <wsdl:output message="tns:ForceOpenDoorHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ForceCloseDoor">
+      <wsdl:input message="tns:ForceCloseDoorHttpPostIn" />
+      <wsdl:output message="tns:ForceCloseDoorHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OpenDoor">
+      <wsdl:input message="tns:OpenDoorHttpPostIn" />
+      <wsdl:output message="tns:OpenDoorHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CanclForceDoor">
+      <wsdl:input message="tns:CanclForceDoorHttpPostIn" />
+      <wsdl:output message="tns:CanclForceDoorHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryDoorStatus">
+      <wsdl:input message="tns:QueryDoorStatusHttpPostIn" />
+      <wsdl:output message="tns:QueryDoorStatusHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetTimeZone">
+      <wsdl:input message="tns:SetTimeZoneHttpPostIn" />
+      <wsdl:output message="tns:SetTimeZoneHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetPreTimeZone">
+      <wsdl:input message="tns:SetPreTimeZoneHttpPostIn" />
+      <wsdl:output message="tns:SetPreTimeZoneHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetMjHoliday">
+      <wsdl:input message="tns:SetMjHolidayHttpPostIn" />
+      <wsdl:output message="tns:SetMjHolidayHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetMjAuthor">
+      <wsdl:input message="tns:SetMjAuthorHttpPostIn" />
+      <wsdl:output message="tns:SetMjAuthorHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearMJAuthor">
+      <wsdl:input message="tns:ClearMJAuthorHttpPostIn" />
+      <wsdl:output message="tns:ClearMJAuthorHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetData">
+      <wsdl:input message="tns:GetDataHttpPostIn" />
+      <wsdl:output message="tns:GetDataHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDoorEntityWhiteList">
+      <wsdl:input message="tns:GetDoorEntityWhiteListHttpPostIn" />
+      <wsdl:output message="tns:GetDoorEntityWhiteListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNowDateDoorEntityWhiteList">
+      <wsdl:input message="tns:GetNowDateDoorEntityWhiteListHttpPostIn" />
+      <wsdl:output message="tns:GetNowDateDoorEntityWhiteListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOutNowDateDoorEntityWhiteList">
+      <wsdl:input message="tns:GetOutNowDateDoorEntityWhiteListHttpPostIn" />
+      <wsdl:output message="tns:GetOutNowDateDoorEntityWhiteListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertOneWhiteList">
+      <wsdl:input message="tns:InsertOneWhiteListHttpPostIn" />
+      <wsdl:output message="tns:InsertOneWhiteListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RunOneMjWork">
+      <wsdl:input message="tns:RunOneMjWorkHttpPostIn" />
+      <wsdl:output message="tns:RunOneMjWorkHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DoorControlSoap" type="tns:DoorControlSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SearchDoorControl">
+      <soap:operation soapAction="http://tempuri.org/SearchDoorControl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetTime">
+      <soap:operation soapAction="http://tempuri.org/SetTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTime">
+      <soap:operation soapAction="http://tempuri.org/GetTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetMjParam">
+      <soap:operation soapAction="http://tempuri.org/SetMjParam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ForceOpenDoor">
+      <soap:operation soapAction="http://tempuri.org/ForceOpenDoor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ForceCloseDoor">
+      <soap:operation soapAction="http://tempuri.org/ForceCloseDoor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpenDoor">
+      <soap:operation soapAction="http://tempuri.org/OpenDoor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CanclForceDoor">
+      <soap:operation soapAction="http://tempuri.org/CanclForceDoor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryDoorStatus">
+      <soap:operation soapAction="http://tempuri.org/QueryDoorStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetTimeZone">
+      <soap:operation soapAction="http://tempuri.org/SetTimeZone" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPreTimeZone">
+      <soap:operation soapAction="http://tempuri.org/SetPreTimeZone" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetMjHoliday">
+      <soap:operation soapAction="http://tempuri.org/SetMjHoliday" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetMjAuthor">
+      <soap:operation soapAction="http://tempuri.org/SetMjAuthor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearMJAuthor">
+      <soap:operation soapAction="http://tempuri.org/ClearMJAuthor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetData">
+      <soap:operation soapAction="http://tempuri.org/GetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDoorEntityWhiteList">
+      <soap:operation soapAction="http://tempuri.org/GetDoorEntityWhiteList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNowDateDoorEntityWhiteList">
+      <soap:operation soapAction="http://tempuri.org/GetNowDateDoorEntityWhiteList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOutNowDateDoorEntityWhiteList">
+      <soap:operation soapAction="http://tempuri.org/GetOutNowDateDoorEntityWhiteList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertOneWhiteList">
+      <soap:operation soapAction="http://tempuri.org/InsertOneWhiteList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RunOneMjWork">
+      <soap:operation soapAction="http://tempuri.org/RunOneMjWork" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DoorControlSoap12" type="tns:DoorControlSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SearchDoorControl">
+      <soap12:operation soapAction="http://tempuri.org/SearchDoorControl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetTime">
+      <soap12:operation soapAction="http://tempuri.org/SetTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTime">
+      <soap12:operation soapAction="http://tempuri.org/GetTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetMjParam">
+      <soap12:operation soapAction="http://tempuri.org/SetMjParam" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ForceOpenDoor">
+      <soap12:operation soapAction="http://tempuri.org/ForceOpenDoor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ForceCloseDoor">
+      <soap12:operation soapAction="http://tempuri.org/ForceCloseDoor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpenDoor">
+      <soap12:operation soapAction="http://tempuri.org/OpenDoor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CanclForceDoor">
+      <soap12:operation soapAction="http://tempuri.org/CanclForceDoor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryDoorStatus">
+      <soap12:operation soapAction="http://tempuri.org/QueryDoorStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetTimeZone">
+      <soap12:operation soapAction="http://tempuri.org/SetTimeZone" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPreTimeZone">
+      <soap12:operation soapAction="http://tempuri.org/SetPreTimeZone" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetMjHoliday">
+      <soap12:operation soapAction="http://tempuri.org/SetMjHoliday" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetMjAuthor">
+      <soap12:operation soapAction="http://tempuri.org/SetMjAuthor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearMJAuthor">
+      <soap12:operation soapAction="http://tempuri.org/ClearMJAuthor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetData">
+      <soap12:operation soapAction="http://tempuri.org/GetData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDoorEntityWhiteList">
+      <soap12:operation soapAction="http://tempuri.org/GetDoorEntityWhiteList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNowDateDoorEntityWhiteList">
+      <soap12:operation soapAction="http://tempuri.org/GetNowDateDoorEntityWhiteList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOutNowDateDoorEntityWhiteList">
+      <soap12:operation soapAction="http://tempuri.org/GetOutNowDateDoorEntityWhiteList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertOneWhiteList">
+      <soap12:operation soapAction="http://tempuri.org/InsertOneWhiteList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RunOneMjWork">
+      <soap12:operation soapAction="http://tempuri.org/RunOneMjWork" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DoorControlHttpGet" type="tns:DoorControlHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="SearchDoorControl">
+      <http:operation location="/SearchDoorControl" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetTime">
+      <http:operation location="/SetTime" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTime">
+      <http:operation location="/GetTime" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ForceOpenDoor">
+      <http:operation location="/ForceOpenDoor" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ForceCloseDoor">
+      <http:operation location="/ForceCloseDoor" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpenDoor">
+      <http:operation location="/OpenDoor" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CanclForceDoor">
+      <http:operation location="/CanclForceDoor" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryDoorStatus">
+      <http:operation location="/QueryDoorStatus" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetTimeZone">
+      <http:operation location="/SetTimeZone" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPreTimeZone">
+      <http:operation location="/SetPreTimeZone" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetMjHoliday">
+      <http:operation location="/SetMjHoliday" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetMjAuthor">
+      <http:operation location="/SetMjAuthor" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearMJAuthor">
+      <http:operation location="/ClearMJAuthor" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetData">
+      <http:operation location="/GetData" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDoorEntityWhiteList">
+      <http:operation location="/GetDoorEntityWhiteList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNowDateDoorEntityWhiteList">
+      <http:operation location="/GetNowDateDoorEntityWhiteList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOutNowDateDoorEntityWhiteList">
+      <http:operation location="/GetOutNowDateDoorEntityWhiteList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertOneWhiteList">
+      <http:operation location="/InsertOneWhiteList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RunOneMjWork">
+      <http:operation location="/RunOneMjWork" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DoorControlHttpPost" type="tns:DoorControlHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="SearchDoorControl">
+      <http:operation location="/SearchDoorControl" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetTime">
+      <http:operation location="/SetTime" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTime">
+      <http:operation location="/GetTime" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ForceOpenDoor">
+      <http:operation location="/ForceOpenDoor" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ForceCloseDoor">
+      <http:operation location="/ForceCloseDoor" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpenDoor">
+      <http:operation location="/OpenDoor" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CanclForceDoor">
+      <http:operation location="/CanclForceDoor" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryDoorStatus">
+      <http:operation location="/QueryDoorStatus" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetTimeZone">
+      <http:operation location="/SetTimeZone" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPreTimeZone">
+      <http:operation location="/SetPreTimeZone" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetMjHoliday">
+      <http:operation location="/SetMjHoliday" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetMjAuthor">
+      <http:operation location="/SetMjAuthor" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearMJAuthor">
+      <http:operation location="/ClearMJAuthor" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetData">
+      <http:operation location="/GetData" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDoorEntityWhiteList">
+      <http:operation location="/GetDoorEntityWhiteList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNowDateDoorEntityWhiteList">
+      <http:operation location="/GetNowDateDoorEntityWhiteList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOutNowDateDoorEntityWhiteList">
+      <http:operation location="/GetOutNowDateDoorEntityWhiteList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertOneWhiteList">
+      <http:operation location="/InsertOneWhiteList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RunOneMjWork">
+      <http:operation location="/RunOneMjWork" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DoorControl">
+    <wsdl:port name="DoorControlSoap" binding="tns:DoorControlSoap">
+      <soap:address location="http://192.168.1.164:1008/DoorControl.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DoorControlSoap12" binding="tns:DoorControlSoap12">
+      <soap12:address location="http://192.168.1.164:1008/DoorControl.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DoorControlHttpGet" binding="tns:DoorControlHttpGet">
+      <http:address location="http://192.168.1.164:1008/DoorControl.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DoorControlHttpPost" binding="tns:DoorControlHttpPost">
+      <http:address location="http://192.168.1.164:1008/DoorControl.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
