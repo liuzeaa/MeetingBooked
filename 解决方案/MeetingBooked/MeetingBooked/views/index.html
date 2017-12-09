@@ -8,6 +8,7 @@
     <link href="../assets/css/reset.css" rel="stylesheet" />
     <link href="../assets/js/element-ui/lib/theme-chalk/index.css" rel="stylesheet" />
     <link href="../assets/css/layout.css" rel="stylesheet" />
+    
 </head>
 <body>
     <div id="app">
@@ -16,7 +17,7 @@
             <el-main>
                 <el-tabs v-model="activeName" type="card" >
                     <el-tab-pane label="我的日程" name="first">
-                        aa
+                        
                     </el-tab-pane>
                     <el-tab-pane label="会议预约" name="second">
 
@@ -37,11 +38,8 @@
     <script>
         var Index = new Vue({
             el: "#app",
-            data: function () {
-                return {
-                    activeName: "first",
-                    tableData: []
-                }
+            data: {
+                activeName: "first"
             },
             methods: {
                 
