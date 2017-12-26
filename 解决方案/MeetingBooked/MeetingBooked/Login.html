@@ -20,13 +20,13 @@
                         :rules="[
                       { required: true, message: '用户名不能为空'},
                     ]">
-                        <el-input type="text" v-model.number="loginForm.username" complete="off"></el-input>
+                        <el-input type="text" v-model.trim="loginForm.username" complete="off"></el-input>
                     </el-form-item>
                     <el-form-item prop="password"
                          :rules="[
                       { required: true, message: '密码不能为空'},
                     ]">
-                        <el-input type="password" v-model.number="loginForm.password" complete="off"></el-input>
+                        <el-input type="password" v-model.trim="loginForm.password" complete="off"></el-input>
                     </el-form-item>
                     <el-form-item>
                         <el-button type="primary" @click="submitForm('loginForm')" style="width:100%;">登录</el-button>
